@@ -1,0 +1,136 @@
+ 4. Selector forms a. Write a program to apply different types of selector forms i. Simple selector (element, id, class, group, universal) ii. Combinator selector (descendant, child, adjacent sibling, general sibling) iii.Pseudo-class selector iv. Pseudo-element selector v. Attribute selector
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Selector Types Example</title>
+<style>
+    /* ===============================
+       i. Simple Selectors
+    =============================== */
+    /* Element selector */
+    h1 {
+      color: darkblue;
+    }
+
+    /* ID selector */
+    #highlight {
+      background-color: yellow;
+    }
+
+    /* Class selector */
+    .important {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Group selector */
+    h2, p {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Universal selector */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* ===============================
+       ii. Combinator Selectors
+    =============================== */
+    /* Descendant selector */
+    div p {
+      color: green;
+    }
+
+    /* Child selector */
+    ul > li {
+      color: blue;
+    }
+
+    /* Adjacent sibling selector */
+    h2 + p {
+      font-style: italic;
+    }
+
+    /* General sibling selector */
+    h3 ~ p {
+      border-left: 3px solid gray;
+      padding-left: 5px;
+    }
+
+    /* ===============================
+       iii. Pseudo-class Selector
+    =============================== */
+    a:hover {
+      color: orange;
+    }
+
+    li:first-child {
+      font-style: italic;
+    }
+
+    /* ===============================
+       iv. Pseudo-element Selector
+    =============================== */
+    p::first-line {
+      font-weight: bold;
+    }
+
+    p::after {
+      content: " 🔚";
+    }
+
+    /* ===============================
+       v. Attribute Selector
+    =============================== */
+    input[type="text"] {
+      border: 2px solid teal;
+    }
+
+    a[target="_blank"] {
+      text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<h1>CSS Selector Types Demo</h1>
+
+<h2>Simple Selectors</h2>
+<p>This is a simple paragraph.</p>
+<p id="highlight">This paragraph uses an ID selector.</p>
+<p class="important">This paragraph uses a class selector.</p>
+
+<h2>Combinator Selectors</h2>
+<div>
+<p>This is a descendant paragraph (inside a div).</p>
+</div>
+<ul>
+<li>First item (child selector)</li>
+<li>Second item</li>
+</ul>
+<h2>Title</h2>
+<p>This paragraph is adjacent to an h2 (adjacent sibling).</p>
+<h3>Section Heading</h3>
+<p>This paragraph is a general sibling of h3.</p>
+
+<h2>Pseudo-class Selector</h2>
+<a href="https://example.com" target="_blank">Hover over me</a>
+<ul>
+<li>First</li>
+<li>Second</li>
+</ul>
+
+<h2>Pseudo-element Selector</h2>
+<p>This is an example of a pseudo-element applied to the first line and end of paragraph.</p>
+
+<h2>Attribute Selector</h2>
+<input type="text" placeholder="Text input">
+<input type="password" placeholder="Password input">
+
+</body>
+</html>
+Output:
+
