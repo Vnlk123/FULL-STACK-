@@ -1,0 +1,297 @@
+9.Java script Functions and Events
+A.Design a appropriate function should be called to display 
+i).Factorial of that number 
+ii).Fibonacci series up to that number
+ii).Prime numbers up to that number
+iv).Is it palindrome or not
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Auto Number Analyzer</title>
+<style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+    input {
+      padding: 8px;
+      width: 200px;
+    }
+    #output {
+      margin-top: 20px;
+    }
+    .result {
+      margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h2>Type a Number:</h2>
+<input type="number" id="numberInput" placeholder="Enter a number">
+<div id="output"></div>
+
+<script>
+  const input = document.getElementById("numberInput");
+  const output = document.getElementById("output");
+
+  input.addEventListener("input", function () {
+    const num = parseInt(input.value);
+    output.innerHTML = ""; // Clear previous output
+
+    if (isNaN(num) || num < 0) {
+      output.innerHTML = "<div class='result'>Please enter a valid non-negative number.</div>";
+      return;
+    }
+
+    // Factorial
+    let fact = 1;
+    for (let i = 2; i <= num; i++) {
+      fact *= i;
+    }
+    output.innerHTML += `<div class='result'>Factorial of ${num} is ${fact}</div>`;
+
+    // Fibonacci Series
+    let fib = [0, 1];
+    while (fib[fib.length - 1] + fib[fib.length - 2] <= num) {
+      fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+    }
+    const fibSeries = fib.filter(n => n <= num).join(", ");
+    output.innerHTML += `<div class='result'>Fibonacci series up to ${num}: ${fibSeries}</div>`;
+
+    // Prime Numbers
+    const primes = [];
+    for (let i = 2; i <= num; i++) {
+      let isPrime = true;
+      for (let j = 2; j <= Math.sqrt(i); j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) primes.push(i);
+    }
+    output.innerHTML += `<div class='result'>Prime numbers up to ${num}: ${primes.join(", ")}</div>`;
+
+    // Palindrome Check
+    const str = num.toString();
+    const reversed = str.split('').reverse().join('');
+    const isPalindrome = (str === reversed);
+    output.innerHTML += `<div class='result'>${num} is ${isPalindrome ? '' : 'not '}a palindrome</div>`;
+  });
+</script>
+
+</body>
+</html>
+Output:
+
+9B .Design a HTML having a text box and four buttons named Factorial, Fibonacci, Prime, and Palindrome. When a button is pressed an appropriate function should be called to display 
+i).Factorial of that number 
+ii).Fibonacci series up to that number
+ii).Prime numbers up to that number
+iv).Is it palindrome or not
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Analyzer</title>
+<style>
+    body {
+      font-family: Arial;
+      margin: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 8px;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<h2>Enter a Number:</h2>
+<input type="number" id="numberInput" placeholder="Enter a number">
+
+<br>
+
+<button onclick="calculateFactorial()">Factorial</button>
+<button onclick="generateFibonacci()">Fibonacci</button>
+<button onclick="listPrimes()">Prime</button>
+<button onclick="checkPalindrome()">Palindrome</button>
+
+<div id="output"></div>
+
+<script>
+  function getInputNumber() {
+    return parseInt(document.getElementById("numberInput").value);
+  }
+
+  function calculateFactorial() {
+    const num = getInputNumber();
+    if (isNaN(num) || num < 0) {
+      document.getElementById("output").innerHTML = "Please enter a non-negative integer.";
+      return;
+    }
+    let fact = 1;
+    for (let i = 2; i <= num; i++) {
+      fact *= i;
+    }
+    document.getElementById("output").innerHTML = `Factorial of ${num} is ${fact}`;
+  }
+
+  function generateFibonacci() {
+    const num = getInputNumber();
+    if (isNaN(num) || num < 0) {
+      document.getElementById("output").innerHTML = "Please enter a non-negative number.";
+      return;
+    }
+
+    const fib = [0, 1];
+    while (fib[fib.length - 1] + fib[fib.length - 2] <= num) {
+      fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+    }
+
+    const result = fib.filter(n => n <= num);
+    document.getElementById("output").innerHTML = `Fibonacci series up to ${num}: ${result.join(', ')}`;
+  }
+
+  function listPrimes() {
+    const num = getInputNumber();
+    if (isNaN(num) || num < 2) {
+      document.getElementById("output").innerHTML = "Enter a number greater than 1.";
+      return;
+    }
+
+    const primes = [];
+    for (let i = 2; i <= num; i++) {
+      let isPrime = true;
+      for (let j = 2; j <= Math.sqrt(i); j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) primes.push(i);
+    }
+
+    document.getElementById("output").innerHTML = `Prime numbers up to ${num}: ${primes.join(', ')}`;
+  }
+
+  function checkPalindrome() {
+    const num = getInputNumber();
+    if (isNaN(num)) {
+      document.getElementById("output").innerHTML = "Please enter a valid number.";
+      return;
+    }
+
+    const str = num.toString();
+    const reversed = str.split('').reverse().join('');
+    if (str === reversed) {
+      document.getElementById("output").innerHTML = `${num} is a palindrome.`;
+    } else {
+      document.getElementById("output").innerHTML = `${num} is not a palindrome.`;
+    }
+  }
+</script>
+</body>
+</html>
+Output:
+
+
+
+9C.Write a program to validate the following fields in a registration page.
+i). Name (start with alphabet and followed by alphanumeric and the length should not be less than 6 characters) 
+ii). Mobile (only numbers and length 10 digits)
+iii). E-mail (should contain format like xxxxxxx@xxxxxx.xxx)
+
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form Validation</title>
+<style>
+    body { font-family: Arial; padding: 20px; }
+    input { margin-bottom: 10px; padding: 8px; width: 300px; }
+    .error { color: red; font-size: 14px; }
+    .success { color: green; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="registrationForm" onsubmit="return validateForm()">
+<label>Name:</label><br>
+<input type="text" id="name"><br>
+<span id="nameError" class="error"></span><br>
+
+<label>Mobile:</label><br>
+<input type="text" id="mobile"><br>
+<span id="mobileError" class="error"></span><br>
+
+<label>Email:</label><br>
+<input type="text" id="email"><br>
+<span id="emailError" class="error"></span><br>
+
+<input type="submit" value="Register">
+</form>
+
+<div id="successMsg" class="success"></div>
+
+<script>
+  function validateForm() {
+    // Clear previous messages
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("mobileError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("successMsg").innerText = "";
+
+    let isValid = true;
+
+    // Get values
+    const name = document.getElementById("name").value.trim();
+    const mobile = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    // Name validation: starts with letter, followed by alphanumerics, min 6 characters
+    const namePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+    if (!namePattern.test(name)) {
+      document.getElementById("nameError").innerText = "Invalid name. Must start with a letter and be at least 6 characters.";
+      isValid = false;
+    }
+
+    // Mobile validation: exactly 10 digits
+    const mobilePattern = /^[0-9]{10}$/;
+    if (!mobilePattern.test(mobile)) {
+      document.getElementById("mobileError").innerText = "Mobile must be exactly 10 digits.";
+      isValid = false;
+    }
+
+    // Email validation: basic format check
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+      document.getElementById("emailError").innerText = "Invalid email format.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      document.getElementById("successMsg").innerText = "Registration successful!";
+    }
+
+    return false; // prevent form submission for demo purposes
+  }
+</script>
+
+</body>
+</html>
+
