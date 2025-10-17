@@ -1,0 +1,270 @@
+2.A.HTML Tables, Forms and Frames 
+ Write a HTML program, to explain the working of tables. (use tags: <table>, <tr>, <th>,<td> and attributes: border, rowspan, colspan)
+
+
+
+Program:
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Table Example</title>
+</head>
+<body>
+
+<h1>HTML Table Demonstration</h1>
+
+<table border="1">
+<tr>
+<th rowspan="2">Name</th>
+<th colspan="2">Marks</th>
+<th rowspan="2">Total</th>
+</tr>
+<tr>
+<th>Math</th>
+<th>Science</th>
+</tr>
+<tr>
+<td>Alice</td>
+<td>85</td>
+<td>90</td>
+<td>175</td>
+</tr>
+<tr>
+<td>Bob</td>
+<td>78</td>
+<td>88</td>
+<td>166</td>
+</tr>
+<tr>
+<td>Charlie</td>
+<td>92</td>
+<td>95</td>
+<td>187</td>
+</tr>
+</table>
+
+</body>
+</html>
+Output:
+
+
+2b.  Write a HTML program, to explain the working of tables by preparing a timetable. (Note: Use tag to set the caption to the table & also use cell spacing, cell padding, border, rowspan, colspan etc.).
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Class Timetable</title>
+</head>
+<body>
+
+<h1>School Class Timetable</h1>
+
+<table border="1" cellspacing="5" cellpadding="10">
+<caption><strong>Weekly Class Timetable</strong></caption>
+<tr>
+<th>Day</th>
+<th>Period 1<br>9:00 - 10:00</th>
+<th>Period 2<br>10:00 - 11:00</th>
+<th>Break<br>11:00 - 11:30</th>
+<th>Period 3<br>11:30 - 12:30</th>
+<th>Period 4<br>12:30 - 1:30</th>
+</tr>
+
+<tr>
+<td>Monday</td>
+<td>Math</td>
+<td>Science</td>
+<td rowspan="5" align="center">Break</td>
+<td>English</td>
+<td>History</td>
+</tr>
+
+<tr>
+<td>Tuesday</td>
+<td>English</td>
+<td>Math</td>
+<td>Geography</td>
+<td>Science</td>
+</tr>
+
+<tr>
+<td>Wednesday</td>
+<td colspan="2" align="center">Project Work</td>
+<td>Math</td>
+<td>Art</td>
+</tr>
+
+<tr>
+<td>Thursday</td>
+<td>Science</td>
+<td>English</td>
+<td>History</td>
+<td>Sports</td>
+</tr>
+
+<tr>
+<td>Friday</td>
+<td>Geography</td>
+<td>Computer</td>
+<td>Math</td>
+<td>Music</td>
+</tr>
+</table>
+
+</body>
+</html>
+Output:
+
+
+2C. Write a HTML program, to explain the working of forms by designing Registration form. (Note: Include text field, password field, number field, date of birth field, checkboxes, radio buttons, list boxes using and two buttons ie: submit and reset. Use tables to provide a better view).
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body>
+
+<h1>User Registration Form</h1>
+
+<form action="#" method="post">
+<table border="1" cellpadding="10" cellspacing="0">
+<caption><strong>Registration Details</strong></caption>
+
+<!-- Name -->
+<tr>
+<td><label for="fullname">Full Name:</label></td>
+<td><input type="text" id="fullname" name="fullname" required></td>
+</tr>
+
+<!-- Password -->
+<tr>
+<td><label for="password">Password:</label></td>
+<td><input type="password" id="password" name="password" required></td>
+</tr>
+
+<!-- Age -->
+<tr>
+<td><label for="age">Age:</label></td>
+<td><input type="number" id="age" name="age" min="1" max="100"></td>
+</tr>
+
+<!-- Date of Birth -->
+<tr>
+<td><label for="dob">Date of Birth:</label></td>
+<td><input type="date" id="dob" name="dob"></td>
+</tr>
+
+<!-- Gender (Radio buttons) -->
+<tr>
+<td>Gender:</td>
+<td>
+<input type="radio" name="gender" value="Male" id="male"><label for="male">Male</label>
+<input type="radio" name="gender" value="Female" id="female"><label for="female">Female</label>
+<input type="radio" name="gender" value="Other" id="other"><label for="other">Other</label>
+</td>
+</tr>
+
+<!-- Hobbies (Checkboxes) -->
+<tr>
+<td>Hobbies:</td>
+<td>
+<input type="checkbox" name="hobby" value="Reading"> Reading
+<input type="checkbox" name="hobby" value="Music"> Music
+<input type="checkbox" name="hobby" value="Sports"> Sports
+<input type="checkbox" name="hobby" value="Travel"> Travel
+</td>
+</tr>
+<!-- Country (Dropdown/Select Box) -->
+<tr>
+<td><label for="country">Country:</label></td>
+<td>
+<select id="country" name="country">
+<option value="">--Select Country--</option>
+<option value="India">India</option>
+<option value="USA">USA</option>
+<option value="UK">UK</option>
+<option value="Australia">Australia</option>
+</select>
+</td>
+</tr>
+<!-- Address (Textarea) -->
+<tr>
+<td><label for="address">Address:</label></td>
+<td><textarea id="address" name="address" rows="4" cols="30"></textarea></td>
+</tr>
+
+<!-- Buttons -->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+Output:
+
+2d. Write a HTML program, to explain the working of frames, such that page is to be divided into 3 parts on either direction. (Note: first frame 🡪 image, second frame 🡪 paragraph, third frame 🡪 hyperlink. And also make sure of using “no frame” attribute such that frames to be fixed).
+
+Program:
+Image
+
+<!DOCTYPE html>
+<html>
+<body>
+<img src="https://www.flipkart.com/deer-baby-cute-animal-poster-paper-print/p/itm68fd6083fdce0?pid=POSESUZH2FTZG4N4&cmpid=product.share.pp&_refId=PP.b49a6693-3fa7-4678-99c9-af53ef4371ca.POSESUZH2FTZG4N4" alt="Sample Image">
+</body>
+</html>
+
+
+  Frame
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame Example</title>
+</head>
+
+<frameset cols="33%,34%,33%" noresize border="1">
+<frame src="image.html" name="imageFrame" noresize>
+<frame src="p.html" name="paragraphFrame" noresize>
+<frame src="l.html" name="linkFrame" noresize>
+
+<noframes>
+<body>
+<p>Your browser does not support frames. Please use a modern browser.</p>
+</body>
+</noframes>
+</frameset>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<a href="https://www.openai.com" target="_blank">Visit OpenAI</a>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<p>This is a sample paragraph displayed in the second frame.</p>
+</body>
+</html>
+
+
