@@ -1,0 +1,178 @@
+ 3. HTML 5 and Cascading Style Sheets, Types of CSS
+a. Write a HTML program, that makes use of <article>, <aside>, <figure>, <figcaption>,
+<footer>, <header>, <main>, <nav>, <section>, <div>, <span> tags.
+
+Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML5 Semantic Elements Example</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav, main, footer {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px;
+        }
+        aside {
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        figure {
+            margin: 10px 0;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+
+<header>
+<h1>My Personal Blog</h1>
+<p>Welcome to my world of thoughts.</p>
+</header>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Articles</a></li>
+<li><a href="#">Gallery</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav>
+
+<main>
+<section>
+<h2>Latest Articles</h2>
+
+<article>
+<h3>Why Learn HTML5?</h3>
+<p>HTML5 provides semantic tags that make your code cleaner and more accessible. 
+                    Here's an example of a <span class="highlight">highlighted</span> word using the &lt;span&gt; tag.
+</p>
+
+<figure>
+<img src="https://via.placeholder.com/300x150" alt="Sample Image">
+<figcaption>An example image using the &lt;figure&gt; and &lt;figcaption&gt; tags.</figcaption>
+</figure>
+</article>
+</section>
+
+<aside>
+<h3>About the Author</h3>
+<p>This blog is maintained by a passionate web developer sharing tips and tutorials.</p>
+</aside>
+
+<section>
+<div>
+<h3>Tech News</h3
+
+
+
+
+
+Output:
+
+3b. Write a HTML program, to embed audio and video into HTML web page. 
+ Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Embedded Audio and Video Example</title>
+</head>
+<body>
+<h1>Media Embedding with Online Sources</h1>
+<!-- Audio Section -->
+<section>
+<h2>Listen to Nature Sounds</h2>
+<audio controls>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+</audio>
+</section>
+
+<hr>
+
+<!-- Video Section -->
+<section>
+<h2>Watch Sample Video</h2>
+<video width="500" height="300" controls>
+<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+</video>
+</section>
+
+</body>
+</html>
+
+Output:
+
+
+3C.Write a program to apply different types (or levels of styles or style specification formats) - inline, internal, external styles to HTML elements. (identify selector, property and value).
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Style Levels Example</title>
+
+<!-- Internal CSS -->
+<style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        #internal-text {
+            font-style: italic;
+        }
+</style>
+
+<!-- Link to External CSS -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>Different Types of CSS Styles</h1>
+
+<!-- Inline CSS -->
+<p style="color: red; font-weight: bold;">
+        This paragraph uses <strong>inline CSS</strong>.<br>
+        Selector: `p` | Property: color | Value: red
+</p>
+
+<!-- Internal CSS -->
+<p id="internal-text">
+        This paragraph uses <strong>internal CSS</strong> (styled by ID selector).
+</p>
+
+<!-- External CSS -->
+<p class="external-style">
+        This paragraph uses <strong>external CSS</strong> (styled by class selector).
+</p>
+
+</body>
+</html>
+Styles :
+
+* styles.css - External CSS file */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.external-style {
+    color: green;
+    font-size: 20px;
+}
+
+Output:
