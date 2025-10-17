@@ -1,0 +1,205 @@
+6. Applying JavaScript - internal and external, I/O, Type Conversion 
+a. Write a program to embed internal and external JavaScript in a web page.
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Internal and External JavaScript</title>
+
+<!-- External JavaScript -->
+<script>
+function showExternalMessage() {
+  alert("This is an External JavaScript alert!");
+}
+</script>
+
+<!-- Internal JavaScript -->
+<script>
+    function showInternalMessage() {
+      alert("This is an Internal JavaScript alert!");
+    }
+</script>
+</head>
+<body>
+
+<h1>JavaScript Embedding</h1>
+
+<button onclick="showInternalMessage()">Run Internal Script</button>
+<button onclick="showExternalMessage()">Run External Script</button>
+
+</body>
+</html>
+Output:
+
+ 6b. Write a program to explain the different ways for displaying output.
+Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Output Methods</title>
+</head>
+<body>
+
+<h2>JavaScript Output Examples</h2>
+
+<div id="output-area"></div>
+
+<script>
+    // 1. Alert Box
+    alert("This is an alert box (popup)");
+
+    // 2. Document Write (use sparingly)
+    document.write("This is written using document.write()<br>");
+
+    // 3. Console Log (for developers)
+    console.log("This message is logged to the browser console");
+
+    // 4. InnerHTML (most common for updating page content)
+    document.getElementById("output-area").innerHTML = "This content was inserted using innerHTML!";
+</script>
+
+</body>
+</html>
+Output:
+
+
+  6C.Write a program to explain the different ways for taking input.
+
+Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JavaScript Input Methods</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      padding: 5px;
+      margin: 10px 0;
+    }
+</style>
+</head>
+<body>
+
+<h2>JavaScript Input Methods</h2>
+
+<!-- Method 1: Input using prompt() -->
+<button onclick="promptInput()">Prompt Input</button>
+<p id="prompt-result"></p>
+
+<!-- Method 2: Input using HTML input field -->
+<input type="text" id="textInput" placeholder="Enter your name">
+<button onclick="readTextInput()">Submit</button>
+<p id="input-result"></p>
+
+<!-- Method 3: Input using confirm() -->
+<button onclick="confirmInput()">Confirm Box</button>
+<p id="confirm-result"></p>
+
+<script>
+    // Method 1: prompt()
+    function promptInput() {
+      let name = prompt("Enter your name:");
+      if (name) {
+        document.getElementById("prompt-result").innerText = "You entered: " + name;
+      }
+    }
+
+    // Method 2: HTML input field
+    function readTextInput() {
+      let value = document.getElementById("textInput").value;
+      document.getElementById("input-result").innerText = "Input from text field: " + value;
+    }
+
+    // Method 3: confirm()
+    function confirmInput() {
+      let result = confirm("Do you like JavaScript?");
+      document.getElementById("confirm-result").innerText = result 
+        ? "User clicked OK (Yes)"
+        : "User clicked Cancel (No)";
+    }
+</script>
+
+</body>
+</html>
+
+Output:
+
+
+6d.Create a webpage which uses prompt dialogue box to ask a voter for his name and age. Display the information in table format along with either the voter can vote or not.
+
+Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Voter Eligibility Check</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 50%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+</style>
+</head>
+<body>
+
+<h2>Voter Information</h2>
+
+<div id="output"></div>
+
+<script>
+    // Ask for user input
+    let name = prompt("Enter your name:");
+    let age = prompt("Enter your age:");
+
+    // Convert age to number
+    age = Number(age);
+
+    // Determine voting eligibility
+    let eligibility = (age >= 18) ? "Eligible to Vote" : "Not Eligible to Vote";
+
+    // Display data in a table
+    let tableHTML = `
+<table>
+<tr>
+<th>Name</th>
+<th>Age</th>
+<th>Voting Eligibility</th>
+</tr>
+<tr>
+<td>${name}</td>
+<td>${age}</td>
+<td>${eligibility}</td>
+</tr>
+</table>
+    `;
+
+    // Output to the page
+    document.getElementById("output").innerHTML = tableHTML;
+</script>
+
+</body>
+</html>
+Output:
+
