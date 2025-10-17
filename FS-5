@@ -1,0 +1,248 @@
+5. CSS with Color, Background, Font, Text and CSS Box Model a. Write a program to demonstrate the various ways you can reference a color in CSS.
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Color Reference Types</title>
+  <style>
+    /* 1. Named Color */
+    .named-color {
+      background-color: red;
+      color: white;
+      padding: 10px;
+    }
+
+    /* 2. Hexadecimal Color */
+    .hex-color {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+    }
+
+    /* 3. RGB Color */
+    .rgb-color {
+      background-color: rgb(60, 179, 113); /* medium sea green */
+      color: white;
+      padding: 10px;
+    }
+
+    /* 4. RGBA Color */
+    .rgba-color {
+      background-color: rgba(255, 99, 71, 0.6); /* tomato with transparency */
+      color: black;
+      padding: 10px;
+    }
+
+    /* 5. HSL Color */
+    .hsl-color {
+      background-color: hsl(120, 100%, 25%); /* dark green */
+      color: white;
+      padding: 10px;
+    }
+
+    /* 6. HSLA Color */
+    .hsla-color {
+      background-color: hsla(240, 100%, 50%, 0.5); /* semi-transparent blue */
+      color: black;
+      padding: 10px;
+    }
+
+    /* Styling for layout */
+    div {
+      margin: 10px 0;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ways to Reference Color in CSS</h1>
+
+  <div class="named-color">Named Color: red</div>
+  <div class="hex-color">Hexadecimal Color: #3498db</div>
+  <div class="rgb-color">RGB Color: rgb(60, 179, 113)</div>
+  <div class="rgba-color">RGBA Color: rgba(255, 99, 71, 0.6)</div>
+  <div class="hsl-color">HSL Color: hsl(120, 100%, 25%)</div>
+  <div class="hsla-color">HSLA Color: hsla(240, 100%, 50%, 0.5)</div>
+
+</body>
+</html>
+
+Output:
+
+5b. Write a CSS rule that places a background image halfway down the page, tilting it horizontally. The image should remain in place when the user scrolls up or down.
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fixed & Flipped Background Image with Pseudo-element</title>
+<style>
+    /* Container styling */
+    .background-container {
+      position: relative;
+      height: 2000px; /* Allow scrolling for demonstration */
+      z-index: 1; /* Ensures the content is above the pseudo-element */
+      padding: 50px;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Styling for the pseudo-element that holds the background image */
+    .background-container::before {
+      content: ''; /* Required for the pseudo-element */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://www.w3schools.com/w3images/forest.jpg'); /* Using the image link */
+      background-repeat: no-repeat;
+      background-position: center 50%; /* Image positioned halfway down */
+      background-attachment: fixed; /* Image stays in place during scroll */
+      background-size: cover; /* Ensure the image covers the entire container */
+      transform: scaleX(-1); /* Flips the image horizontally */
+      z-index: -1; /* Keeps the pseudo-element behind the content */
+    }
+
+    /* Example content styling */
+    .content {
+      z-index: 2;
+    }
+</style>
+</head>
+<body>
+
+<div class="background-container">
+<div class="content">
+<h1>Fixed & Flipped Background Image with Pseudo-element</h1>
+<p>This background image stays fixed and tilted horizontally, and it's applied using a pseudo-element.</p>
+</div>
+</div>
+
+</body>
+</html>
+Output:
+
+
+
+
+5c. Write a program using the following terms related to CSS font and text: i. font-size ii. font-weight iii. font-style iv. text-decoration v. text-transformation vi. text-alignment
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Font and Text Properties Example</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .font-size-example {
+      font-size: 24px;
+    }
+
+    .font-weight-example {
+      font-weight: bold;
+    }
+
+    .font-style-example {
+      font-style: italic;
+    }
+
+    .text-decoration-example {
+      text-decoration: underline;
+    }
+
+    .text-transform-example {
+      text-transform: uppercase;
+    }
+
+    .text-align-example {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>CSS Font and Text Properties Demo</h1>
+
+<p class="font-size-example">This text uses <strong>font-size: 24px</strong>.</p>
+
+<p class="font-weight-example">This text uses <strong>font-weight: bold</strong>.</p>
+
+<p class="font-style-example">This text uses <strong>font-style: italic</strong>.</p>
+
+<p class="text-decoration-example">This text uses <strong>text-decoration: underline</strong>.</p>
+
+<p class="text-transform-example">This text uses <strong>text-transform: uppercase</strong>.</p>
+
+<div class="text-align-example">
+<p>This paragraph uses <strong>text-align: center</strong>.</p>
+</div>
+
+</body>
+</html>
+Output:
+
+
+5d. . Write a program, to explain the importance of CSS Box model using i. Content ii. Border iii. Margin iv. padding
+
+Program:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS Box Model Example</title>
+<style>
+    .box {
+      width: 300px;
+      height: 100px;
+      background-color: lightblue;         /* Content area */
+      padding: 20px;                       /* Space inside the box, around content */
+      border: 5px solid darkblue;          /* Border surrounding padding */
+      margin: 30px;                        /* Space outside the box */
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .info {
+      font-size: 14px;
+      background-color: #fff;
+      padding: 10px;
+      margin: 20px;
+      border-left: 3px solid #333;
+    }
+</style>
+</head>
+<body>
+
+<h2>CSS Box Model Demonstration</h2>
+
+<div class="box">
+    This is the content area.
+</div>
+
+<div class="info">
+<strong>Content</strong>: The actual text or element inside the box.<br>
+<strong>Padding</strong>: Space between the content and the border (inside the box).<br>
+<strong>Border</strong>: The line surrounding the padding and content.<br>
+<strong>Margin</strong>: Space outside the border, separating this box from others.
+</div>
+
+</body>
+</html>
+Output:
+
