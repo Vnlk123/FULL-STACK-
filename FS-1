@@ -1,0 +1,200 @@
+Full Stack  Development-1
+
+1. Lists, Links and Images
+A. Write a HTML program, to explain the working of lists. Note: It should have an ordered list, unordered list, nested lists and ordered list in an unordered list and definition lists.
+
+Program:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML Lists Example</title>
+</head>
+<body>
+<h1>Working of Lists in HTML</h1>
+
+<h2>1. Ordered List</h2>
+<ol>
+<li>First item</li>
+<li>Second item</li>
+<li>Third item</li>
+</ol>
+
+<h2>2. Unordered List</h2>
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+<li>Cherry</li>
+</ul>
+
+<h2>3. Nested Lists</h2>
+<ul>
+<li>Fruits
+<ul>
+<li>Apple</li>
+<li>Banana</li>
+</ul>
+</li>
+<li>Vegetables
+<ul>
+<li>Carrot</li>
+<li>Broccoli</li>
+</ul>
+</li>
+</ul>
+
+<h2>4. Ordered List inside an Unordered List</h2>
+<ul>
+<li>Steps to make Tea:
+<ol>
+<li>Boil water</li>
+<li>Add tea leaves</li>
+<li>Simmer</li>
+<li>Strain and serve</li>
+</ol>
+</li>
+</ul>
+
+<h2>5. Definition List</h2>
+<dl>
+<dt>HTML</dt>
+<dd>HyperText Markup Language - standard markup language for creating web pages.</dd>
+<dt>CSS</dt>
+<dd>Cascading Style Sheets - used for styling HTML content.</dd>
+<dt>JavaScript</dt>
+<dd>Programming language that adds interactivity to web pages.</dd>
+</dl>
+</body>
+</html>
+
+Output:
+
+
+
+1B. . Write a HTML program, to explain the working of hyperlinks using tag and href, target Attributes.
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hyperlink Example</title>
+</head>
+<body>
+
+<h1>HTML Hyperlink Demonstration</h1>
+
+<p>This is an example of using the <code>&lt;a&gt;</code> tag with <code>href</code> and <code>target</code> attributes.</p>
+
+<!-- Hyperlink that opens in the same tab -->
+<p>
+<a href="https://www.example.com" target="_self">Visit Example.com (same tab)</a>
+</p>
+
+<!-- Hyperlink that opens in a new tab -->
+<p>
+<a href="https://www.wikipedia.org" target="_blank">Visit Wikipedia (new tab)</a>
+</p>
+
+<!-- Hyperlink that opens in the parent frame (used with iframes) -->
+<p>
+<a href="https://www.openai.com" target="_parent">Visit OpenAI (parent frame)</a>
+</p>
+
+<!-- Hyperlink that opens in the full body of the window (used with framesets) -->
+<p>
+<a href="https://www.google.com" target="_top">Visit Google (full window)</a>
+</p>
+
+</body>
+</html>
+
+
+
+
+OutPut:
+
+
+
+1C.  Create a HTML document that has your image and your friend’s image with a specific height and width. Also when clicked on the images it should navigate to their respective profiles.
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Profile Links</title>
+</head>
+<body>
+
+<h1>Profiles</h1>
+
+<table border="1" cellpadding="10">
+<tr>
+<!-- Your Profile -->
+<td align="center">
+<a href="https://www.yourprofile.com" target="_blank">
+<img src="your-image.jpg" alt="My Profile Image" width="200" height="200"><br>
+<strong>My Profile</strong>
+</a>
+</td>
+
+<!-- Friend's Profile -->
+<td align="center">
+<a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fsearch%2Fprofile%2520picture%2F&psig=AOvVaw3Q_LyvF_3BwdaGb8WKhQ0k&ust=1747108060459000&source=images&cd=vfe&opi=89978449&ved=0CBUQjhxqFwoTCKDumeyCnY0DFQAAAAAdAAAAABAE" target="_blank">
+<img src="friend-image.jpg" alt="Friend's Profile Image" width="200" height="200"><br>
+<strong>Friend's Profile</strong>
+</a>
+</td>
+</tr>
+</table>
+</body>
+</html>
+Output:
+
+1D. Write a HTML program, in such a way that, rather than placing large images on a page, the preferred technique is to use thumbnails by setting the height and width parameters to something like to 100*100 pixels. Each thumbnail image is also a link to a full sized version of the image. Create an image gallery using this technique
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thumbnail Image Gallery</title>
+</head>
+<body>
+<h1>Image Gallery</h1>
+<p>Click on a thumbnail to view the full-sized image.</p>
+<div style="display: flex; gap: 15px; flex-wrap: wrap;">
+<!-- Image 1 -->
+<a href="https://www.pexels.com/photo/brown-giraffe-walking-on-brown-grass-67552/" target="_blank">
+<img src="C:\Users\User\Downloads\1.jpg" alt="Image 1" width="100" height="100">
+</a>
+
+<!-- Image 2 -->
+<a href="https://www.pexels.com/photo/close-up-of-a-siamese-fighting-fish-325045/" target="_blank">
+<img src="images/thumb2.jpg" alt="Image 2" width="100" height="100">
+</a>
+
+<!-- Image 3 -->
+<a href="https://www.pexels.com/photo/black-and-green-toucan-on-tree-branch-17811/" target="_blank">
+<img src="images/thumb3.jpg" alt="Image 3" width="100" height="100">
+</a>
+
+<!-- Add more images as needed -->
+</div>
+
+</body>
+</html>
+Output:
+
+P
+</table>
+
+</body>
+</html>
+Output:
+
+
+
+
