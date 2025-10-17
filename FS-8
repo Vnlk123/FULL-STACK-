@@ -1,0 +1,241 @@
+8. JavaScript Conditional Statements and Loops
+Write a program which asks the user to enter three integers, obtains the numbers from the user and outputs HTML text that displays the larger number followed by the words “LARGER NUMBER” in an information message dialog. If the numbers are equal, output HTML text as “EQUAL NUMBERS”.
+
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compare Numbers</title>
+</head>
+<body>
+
+<script>
+  // Ask user for three integers
+  let num1 = parseInt(prompt("Enter the first integer:"));
+  let num2 = parseInt(prompt("Enter the second integer:"));
+  let num3 = parseInt(prompt("Enter the third integer:"));
+
+  // Check if all numbers are equal
+  if (num1 === num2 && num2 === num3) {
+    document.write("<p><strong>EQUAL NUMBERS</strong></p>");
+  } else {
+    // Find the largest number
+    let largest = num1;
+
+    if (num2 > largest) {
+      largest = num2;
+    }
+
+    if (num3 > largest) {
+      largest = num3;
+    }
+
+    document.write(`<p><strong>${largest} LARGER NUMBER</strong></p>`);
+  }
+</script>
+
+</body>
+</html>
+Output:
+
+
+
+8B.Write a program to display week days using switch case
+
+Program:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Week Days with Switch Case</title>
+</head>
+<body>
+
+<script>
+  // Ask the user to enter a number between 1 and 7
+  let dayNumber = parseInt(prompt("Enter a number (1-7) to get the day of the week:"));
+
+  // Use switch case to determine the day
+  switch (dayNumber) {
+    case 1:
+      document.write("<p>Monday</p>");
+      break;
+    case 2:
+      document.write("<p>Tuesday</p>");
+      break;
+    case 3:
+      document.write("<p>Wednesday</p>");
+      break;
+    case 4:
+      document.write("<p>Thursday</p>");
+      break;
+    case 5:
+      document.write("<p>Friday</p>");
+      break;
+    case 6:
+      document.write("<p>Saturday</p>");
+      break;
+    case 7:
+      document.write("<p>Sunday</p>");
+      break;
+    default:
+      document.write("<p>Invalid input! Please enter a number between 1 and 7.</p>");
+  }
+</script>
+</body>
+</html>
+Output:
+
+
+8C.Write a program to print 1 to 10 numbers using for, while and do-while loops.
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Print 1 to 10 Using Loops</title>
+</head>
+<body>
+
+<h2>Using for loop:</h2>
+<script>
+  for (let i = 1; i <= 10; i++) {
+    document.write(i + "");
+  }
+</script>
+
+<h2>Using while loop:</h2>
+<script>
+  let j = 1;
+  while (j <= 10) {
+    document.write(j + "");
+    j++;
+  }
+</script>
+
+<h2>Using do-while loop:</h2>
+<script>
+  let k = 1;
+  do {
+    document.write(k + "");
+    k++;
+  } while (k <= 10);
+</script>
+
+</body>
+</html>
+Output:
+
+
+
+
+8D.Write a program to print data in object using for-in, for-each and for-of loops.
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Loop Through Object Data</title>
+</head>
+<body>
+
+<script>
+  // Define an object
+  const person = {
+    name: "Alice",
+    age: 30,
+    city: "New York"
+  };
+
+  document.write("<h3>Using for...in (for object properties):</h3>");
+  for (let key in person) {
+    document.write(`${key}: ${person[key]}<br>`);
+  }
+
+  document.write("<h3>Using forEach (on Object.entries):</h3>");
+  Object.entries(person).forEach(([key, value]) => {
+    document.write(`${key}: ${value}<br>`);
+  });
+
+  document.write("<h3>Using for...of (on Object.entries):</h3>");
+  for (let [key, value] of Object.entries(person)) {
+    document.write(`${key}: ${value}<br>`);
+  }
+</script>
+
+</body>
+</html>
+Output:
+
+8E. Develop a program to determine whether a given number is an ‘ARMSTRONG NUMBER’ or not. [Eg: 153 is an Armstrong number, since sum of the cube of the digits is equal to the number i.e.,13 + 53+ 33 = 153]
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Armstrong Number Checker</title>
+</head>
+<body>
+
+<script>
+  // Ask the user for a number
+  let number = parseInt(prompt("Enter a number to check if it's an Armstrong number:"));
+
+  // Convert number to string to work with digits
+  let digits = number.toString();
+  let numDigits = digits.length;
+  let sum = 0;
+
+  // Calculate sum of digits raised to the power of number of digits
+  for (let i = 0; i < numDigits; i++) {
+    sum += Math.pow(parseInt(digits[i]), numDigits);
+  }
+
+  // Compare sum with original number
+  if (sum === number) {
+    document.write(`<p><strong>${number} is an Armstrong number.</strong></p>`);
+  } else {
+    document.write(`<p><strong>${number} is NOT an Armstrong number.</strong></p>`);
+  }
+</script>
+
+</body>
+</html>
+Output:
+
+
+8F.Write a program to display the denomination of the amount deposited in the bank in terms of 100’s, 50’s, 20’s, 10’s, 5’s, 2’s & 1’s. (Eg: If deposited amount is Rs.163, the output should be 1-100’s, 1-50’s, 1- 10’s, 1-2’s & 1-1’s)
+
+Program:
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bank Denomination Calculator</title>
+</head>
+<body>
+
+<script>
+  // Get the deposited amount from the user
+  let amount = parseInt(prompt("Enter the amount deposited (in Rs):"));
+  let originalAmount = amount;
+
+  // Denominations
+  const denominations = [100, 50, 20, 10, 5, 2, 1];
+
+  document.write(`<h3>Breakdown of Rs.${originalAmount}:</h3>`);
+
+  denominations.forEach(denom => {
+    let count = Math.floor(amount / denom);
+    if (count > 0) {
+      document.write(`${count} x Rs.${denom}<br>`);
+      amount = amount % denom;
+    }
+  });
+</script>
+
+</body>
+</html>
+Output:
